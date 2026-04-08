@@ -109,9 +109,9 @@ def test_sigmoid(a: float) -> None:
     """
     assert sigmoid(a) >= 0.0
     assert sigmoid(a) <= 1.0
-    assert_close(1 - sigmoid(a), sigmoid(-a))
+    assert_close(1.0 - sigmoid(a), sigmoid(-a))
     assert_close(sigmoid(0.0), 0.5)
-    assert sigmoid(a - 1) <= sigmoid(a) <= sigmoid(a + 1)
+    assert sigmoid(a - 1.0) <= sigmoid(a) <= sigmoid(a + 1.0)
 
 
 @pytest.mark.task0_2
@@ -146,7 +146,7 @@ def test_other(a: float) -> None:
     """Write a test that ensures some other property holds for your functions."""
     # test that ensures the ReLU is always 0 or positive and always increasing
     assert relu(a) >= 0.0
-    assert relu(a - 1) <= relu(a) <= relu(a + 1)
+    assert relu(a - 1.0) <= relu(a) <= relu(a + 1.0)
 
 
 # ## Task 0.3  - Higher-order functions

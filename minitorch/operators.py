@@ -53,14 +53,14 @@ def neg(a: float) -> float:
     return -a
 
 
-def lt(a: float, b: float) -> bool:
+def lt(a: float, b: float) -> float:
     """Checks if a is less than b"""
-    return a < b
+    return float(a < b)
 
 
-def eq(a: int, b: int) -> bool:
+def eq(a: float, b: float) -> float:
     """Checks if two numbers are equal"""
-    return a == b
+    return float(a == b)
 
 
 def max(a: float, b: float) -> float:
@@ -153,12 +153,9 @@ def zipWith(
     ls1: Iterable[Any], ls2: Iterable[Any], fn: Callable[[Any, Any], Any]
 ) -> Iterable[Any]:
     """Higher-order function that combines elements from two iterables using a given function"""
-    n1 = len(ls1)
-    n2 = len(ls2)
-    n = n1 if n1 < n2 else n2
     result = []
-    for i in range(n):
-        result.append(fn(ls1[i], ls2[i]))
+    for x, y in zip(ls1, ls2):
+        result.append(fn(x, y))
 
     return result
 

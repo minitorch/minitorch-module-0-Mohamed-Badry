@@ -17,7 +17,7 @@ exclude = [
     "**/.*",
     "*chainrule.py*",
 ]
-venvPath = "."
+venvPath = ".."
 venv = ".venv"
 reportUnknownMemberType = "none"
 reportUnknownParameterType = "none"
@@ -74,6 +74,8 @@ exclude = [
     "**/docs/**/*",
 ]
 
+[tool.ruff.lint]
+
 ignore = [
     "ANN101",
     "ANN401",
@@ -94,9 +96,9 @@ ignore = [
     "D100",
     "D101",
     "D107",
+    "D203",
     "D213",
     "ANN204",
-    "ANN102",
 ]
 select = ["D", "E", "F", "N", "ANN"]
 fixable = [
@@ -139,7 +141,6 @@ fixable = [
     "RUF",
     "SIM",
     "SLF",
-    "TCH",
     "TID",
     "TRY",
     "UP",
@@ -147,5 +148,4 @@ fixable = [
 ]
 unfixable = []
 
-[tool.ruff.extend-per-file-ignores]
-"tests/**/*.py" = ["D"]
+extend-per-file-ignores."tests/**/*.py" = ["D"]
