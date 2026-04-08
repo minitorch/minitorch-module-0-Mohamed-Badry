@@ -21,6 +21,7 @@ class Graph:
 
 
 def simple(N):
+    """A simple linearly separable dataset with 2 classes (left and right) and N points"""
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -30,6 +31,7 @@ def simple(N):
 
 
 def diag(N):
+    """A linearly separable dataset with 2 classes separated by a diagonal line"""
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -39,6 +41,8 @@ def diag(N):
 
 
 def split(N):
+    """A dataset with 2 classes split into 3 vertical regions where one class
+    is bounded by the other class from both sides"""
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -48,6 +52,7 @@ def split(N):
 
 
 def xor(N):
+    """A dataset with 2 classes split into 4 quadrants"""
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -57,6 +62,7 @@ def xor(N):
 
 
 def circle(N):
+    """A circular dataset where one class falls inside the circle and the other outside it"""
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -67,6 +73,7 @@ def circle(N):
 
 
 def spiral(N):
+    """A spiral dataset with both classes perfectly separated by a spiral"""
     def x(t):
         return t * math.cos(t) / 20.0
 
