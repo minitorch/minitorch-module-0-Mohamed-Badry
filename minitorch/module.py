@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-import itertools
 from typing import Any, Dict, Optional, Sequence, Tuple
+
 
 class Module:
     """Modules form a tree that store parameters and other
@@ -52,9 +52,12 @@ class Module:
         p: Dict[str, Parameter] = self.__dict__["_parameters"]
         p: List[Tuple[str, Parameter]] = list(p.items())
         for module_name, module in self.__dict__["_modules"].items():
-            p.extend([(f"{module_name}.{child_name}", param) 
-                        for child_name, param 
-                        in module.named_parameters()])
+            p.extend(
+                [
+                    (f"{module_name}.{child_name}", param)
+                    for child_name, param in module.named_parameters()
+                ]
+            )
         return p
 
     def parameters(self) -> Sequence[Parameter]:
@@ -63,7 +66,7 @@ class Module:
         for m in self.modules():
             p.extend(m.parameters())
         return p
-    
+
     def add_parameter(self, k: str, v: Any) -> Parameter:
         """Manually add a parameter. Useful helper for scalar parameters.
 

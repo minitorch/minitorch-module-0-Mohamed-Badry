@@ -114,7 +114,6 @@ def test_sigmoid(a: float) -> None:
     assert sigmoid(a - 1) <= sigmoid(a) <= sigmoid(a + 1)
 
 
-
 @pytest.mark.task0_2
 @given(small_floats, small_floats, small_floats)
 def test_transitive(a: float, b: float, c: float) -> None:
@@ -130,6 +129,7 @@ def test_symmetric(a: float, b: float) -> None:
     gives the same value regardless of the order of its input.
     """
     assert mul(a, b) == mul(b, a)
+
 
 @pytest.mark.task0_2
 @given(small_floats, small_floats, small_floats)

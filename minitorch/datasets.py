@@ -42,7 +42,8 @@ def diag(N):
 
 def split(N):
     """A dataset with 2 classes split into 3 vertical regions where one class
-    is bounded by the other class from both sides"""
+    is bounded by the other class from both sides
+    """
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -74,6 +75,7 @@ def circle(N):
 
 def spiral(N):
     """A spiral dataset with both classes perfectly separated by a spiral"""
+
     def x(t):
         return t * math.cos(t) / 20.0
 
